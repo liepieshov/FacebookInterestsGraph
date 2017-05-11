@@ -1,4 +1,7 @@
-.idea/*
 *.pyc
 *.pyo
-script.py
+.idea/
+*.json
+retest.py
+/test.py
+test_sdk.py
