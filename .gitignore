@@ -5,3 +5,6 @@
 retest.py
 /test.py
 test_sdk.py
+.gitignore
+fb
+facebook_miner.py
