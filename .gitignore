@@ -8,3 +8,4 @@ test_sdk.py
 .gitignore
 fb
 facebook_miner.py
+.login.txt

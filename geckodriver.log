@@ -1,0 +1,877 @@
+1495381313215	geckodriver	INFO	Listening on 127.0.0.1:50411
+1495381314306	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495381319088	Marionette	INFO	Listening on port 36731
+1495381319169	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 19802] WARNING: pipe error (18): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1495381361105	geckodriver	INFO	Listening on 127.0.0.1:49437
+1495381362191	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495381367476	Marionette	INFO	Listening on port 41471
+1495381367638	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495381454517	Marionette	INFO	New connections will no longer be accepted
+[Child 19971] WARNING: pipe error (18): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+[Child 19971] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495381726404	geckodriver	INFO	Listening on 127.0.0.1:34055
+1495381727489	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495381732114	Marionette	INFO	Listening on port 36435
+1495381732308	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495381869515	Marionette	INFO	New connections will no longer be accepted
+[Child 20286] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495381969192	geckodriver	INFO	Listening on 127.0.0.1:53515
+1495381970276	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495381974504	Marionette	INFO	Listening on port 41805
+1495381974617	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0048,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400A8,name=PContent::Msg_ConsoleMessage) Channel closing: too late to send/recv, messages will be lost
+
+1495383136335	geckodriver	INFO	Listening on 127.0.0.1:47333
+1495383137426	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495383141995	Marionette	INFO	Listening on port 38181
+1495383142094	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1495383362612	geckodriver	INFO	Listening on 127.0.0.1:45177
+1495383363699	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495383368637	Marionette	INFO	Listening on port 41395
+1495383368907	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495383419050	geckodriver	INFO	Listening on 127.0.0.1:38025
+1495383420162	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495383424731	Marionette	INFO	Listening on port 41677
+1495383424890	Marionette	WARN	TLS certificate errors will be ignored for this session
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+1495383664864	geckodriver	INFO	Listening on 127.0.0.1:44125
+1495383665948	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495383670322	Marionette	INFO	Listening on port 45539
+1495383670398	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1495383750311	geckodriver	INFO	Listening on 127.0.0.1:48935
+1495383751396	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495383755697	Marionette	INFO	Listening on port 33767
+1495383755809	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0048,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+1495383772060	geckodriver	INFO	Listening on 127.0.0.1:48041
+1495383773148	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495383777511	Marionette	INFO	Listening on port 37311
+1495383777658	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495383874711	geckodriver	INFO	Listening on 127.0.0.1:59365
+1495383875818	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495383880652	Marionette	INFO	Listening on port 33305
+1495383880832	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(firefox:22371): Gtk-CRITICAL **: gtk_clipboard_set_with_data: assertion 'targets != NULL' failed
+JavaScript error: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js, line 216: TypeError: target.tagName is undefined
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1495384307933	geckodriver	INFO	Listening on 127.0.0.1:39945
+1495384309023	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495384313595	Marionette	INFO	Listening on port 36701
+1495384313661	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495384345312	Marionette	INFO	New connections will no longer be accepted
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1495384443967	geckodriver	INFO	Listening on 127.0.0.1:52321
+1495384445050	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495384449739	Marionette	INFO	Listening on port 46223
+1495384449830	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495384481536	Marionette	INFO	New connections will no longer be accepted
+
+###!!! [Child][RunMessage] Error: Channel error: cannot send/recv
+
+Hit MOZ_CRASH(MsgDropped) at /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/glue/BackgroundChildImpl.cpp:141
+[Child 22991] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.child1/540, type getOriginalLocation failed
+
+Request stack:
+request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1269:14
+generateRequestMethods/</frontProto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1426:14
+getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:237:12
+getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:139:12
+updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:261:7
+_create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:124:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:77:3
+_createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1070:23
+_populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:874:28
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+  Stack:
+    destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1212:23
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/stylesheets.js:109:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:40:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/inspector.js:963:5
+destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:2195:13
+_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:311:39
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.child1/540, type getOriginalLocation failed
+
+Request stack:
+request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1269:14
+generateRequestMethods/</frontProto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1426:14
+getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:237:12
+getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:139:12
+updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:261:7
+_create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:124:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:77:3
+_createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1070:23
+_populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:874:28
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+  Stack:
+    destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1212:23
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/stylesheets.js:109:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:40:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/inspector.js:963:5
+destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:2195:13
+_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:311:39
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.child1/540, type getOriginalLocation failed
+
+Request stack:
+request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1269:14
+generateRequestMethods/</frontProto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1426:14
+getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:237:12
+getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:139:12
+updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:261:7
+_create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:124:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:77:3
+_createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1070:23
+_populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:874:28
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+  Stack:
+    destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1212:23
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/stylesheets.js:109:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:40:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/inspector.js:963:5
+destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:2195:13
+_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:311:39
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.child1/540, type getOriginalLocation failed
+
+Request stack:
+request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1269:14
+generateRequestMethods/</frontProto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1426:14
+getOriginalLocation@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:237:12
+getOriginalSourceStrings@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/models/rule.js:139:12
+updateSourceLink@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:261:7
+_create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:124:5
+RuleEditor@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/views/rule-editor.js:77:3
+_createEditors@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:1070:23
+_populate/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/rules/rules.js:874:28
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+  Stack:
+    destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1212:23
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/stylesheets.js:109:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/styles.js:40:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:851:9
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1214:5
+destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/inspector.js:963:5
+destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:2195:13
+_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:311:39
+process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:917:23
+walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:737:11
+
+1495384952803	geckodriver	INFO	Listening on 127.0.0.1:53833
+1495384953896	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495384958446	Marionette	INFO	Listening on port 42977
+1495384958575	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1495385140447	geckodriver	INFO	Listening on 127.0.0.1:56277
+1495385141550	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495385146253	Marionette	INFO	Listening on port 41833
+1495385146401	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495385363620	Marionette	INFO	New connections will no longer be accepted
+[Child 23554] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0048,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0048,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0048,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400A8,name=PContent::Msg_ConsoleMessage) Channel closing: too late to send/recv, messages will be lost
+
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400FA,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 71: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0048,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4400A8,name=PContent::Msg_ConsoleMessage) Channel closing: too late to send/recv, messages will be lost
+
+1495386138906	geckodriver	INFO	Listening on 127.0.0.1:49163
+1495386139993	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495386144199	Marionette	INFO	Listening on port 39565
+1495386144351	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495386179841	Marionette	INFO	New connections will no longer be accepted
+[Child 24172] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495386257532	geckodriver	INFO	Listening on 127.0.0.1:47561
+1495386258623	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495386263079	Marionette	INFO	Listening on port 38535
+1495386263271	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495386298123	Marionette	INFO	New connections will no longer be accepted
+[Child 24357] WARNING: pipe error (18): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x880008,name=PLayerTransaction::Msg_ReleaseCompositable) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x880007,name=PLayerTransaction::Msg_ReleaseLayer) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x880008,name=PLayerTransaction::Msg_ReleaseCompositable) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x880007,name=PLayerTransaction::Msg_ReleaseLayer) Channel error: cannot send/recv
+
+1495386434418	geckodriver	INFO	Listening on 127.0.0.1:42621
+1495386435554	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495386439873	Marionette	INFO	Listening on port 41211
+1495386440056	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495386475080	Marionette	INFO	New connections will no longer be accepted
+[Child 24612] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495386494972	geckodriver	INFO	Listening on 127.0.0.1:47181
+1495386496066	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495386500196	Marionette	INFO	Listening on port 38131
+1495386500352	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495386572203	Marionette	INFO	New connections will no longer be accepted
+[Child 24766] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495386813002	geckodriver	INFO	Listening on 127.0.0.1:53627
+1495386814099	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495386818620	Marionette	INFO	Listening on port 44261
+1495386818732	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495386907712	geckodriver	INFO	Listening on 127.0.0.1:54903
+1495386908806	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495386913015	Marionette	INFO	Listening on port 33291
+1495386913075	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495386986551	geckodriver	INFO	Listening on 127.0.0.1:59293
+1495386987636	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495386992076	Marionette	INFO	Listening on port 43291
+1495386992183	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495387027443	Marionette	INFO	New connections will no longer be accepted
+[Child 25383] WARNING: pipe error (18): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+[Child 25383] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+1495387073709	geckodriver	INFO	Listening on 127.0.0.1:52905
+1495387074798	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495387079546	Marionette	INFO	Listening on port 35921
+1495387079691	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495387171628	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 25584] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495387189130	geckodriver	INFO	Listening on 127.0.0.1:34435
+1495387190216	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495387194495	Marionette	INFO	Listening on port 44893
+1495387194658	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495387286612	Marionette	INFO	New connections will no longer be accepted
+1495387350449	geckodriver	INFO	Listening on 127.0.0.1:38991
+1495387351547	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495387355938	Marionette	INFO	Listening on port 36539
+1495387355999	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495387503020	geckodriver	INFO	Listening on 127.0.0.1:51479
+1495387504109	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495387508318	Marionette	INFO	Listening on port 45179
+1495387508431	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495387569052	Marionette	INFO	New connections will no longer be accepted
+1495388001043	geckodriver	INFO	Listening on 127.0.0.1:46211
+1495388002133	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495388006600	Marionette	INFO	Listening on port 36493
+1495388006667	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495388037752	Marionette	INFO	New connections will no longer be accepted
+[Child 26447] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495388135396	geckodriver	INFO	Listening on 127.0.0.1:41981
+1495388136481	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495388140724	Marionette	INFO	Listening on port 33093
+1495388140866	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495388207164	Marionette	INFO	New connections will no longer be accepted
+[Child 26637] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495388552351	geckodriver	INFO	Listening on 127.0.0.1:37015
+1495388553437	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495388557674	Marionette	INFO	Listening on port 41701
+1495388557782	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495388590264	Marionette	INFO	New connections will no longer be accepted
+[Child 26953] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495388615162	geckodriver	INFO	Listening on 127.0.0.1:54583
+1495388616244	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495388620440	Marionette	INFO	Listening on port 34889
+1495388620492	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495388704792	Marionette	INFO	New connections will no longer be accepted
+[Child 27112] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495388850433	geckodriver	INFO	Listening on 127.0.0.1:56247
+1495388851522	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495388855779	Marionette	INFO	Listening on port 35897
+1495388855936	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495388933798	Marionette	INFO	New connections will no longer be accepted
+[Child 27351] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495388980883	geckodriver	INFO	Listening on 127.0.0.1:50391
+1495388981969	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495388986376	Marionette	INFO	Listening on port 40759
+1495388986459	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495389104140	geckodriver	INFO	Listening on 127.0.0.1:47239
+1495389105227	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495389109465	Marionette	INFO	Listening on port 34747
+1495389109611	Marionette	WARN	TLS certificate errors will be ignored for this session
+Handler function NetworkEventActorProxy.addSecurityInfo threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+NetworkResponseListener.prototype._getSecurityInfo<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:495:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+onStartRequest@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:436:5
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addSecurityInfo threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+NetworkResponseListener.prototype._getSecurityInfo<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:495:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+onStartRequest@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:436:5
+Line: 1670, column: 0
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+1495390093484	geckodriver	INFO	Listening on 127.0.0.1:59927
+1495390094569	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495390099183	Marionette	INFO	Listening on port 36899
+1495390099325	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495390217473	geckodriver	INFO	Listening on 127.0.0.1:44571
+1495390218564	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495390222901	Marionette	INFO	Listening on port 43439
+1495390223041	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495390817012	geckodriver	INFO	Listening on 127.0.0.1:50303
+1495390817158	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495390821519	Marionette	INFO	Listening on port 41849
+1495390821673	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495390919081	Marionette	INFO	New connections will no longer be accepted
+[Child 28985] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495391138594	geckodriver	INFO	Listening on 127.0.0.1:41421
+1495391139683	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495391144546	Marionette	INFO	Listening on port 32985
+1495391144687	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495391242436	Marionette	INFO	New connections will no longer be accepted
+[Child 29255] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495391384840	geckodriver	INFO	Listening on 127.0.0.1:59207
+1495391385928	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495391390805	Marionette	INFO	Listening on port 44523
+1495391390887	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495391734906	geckodriver	INFO	Listening on 127.0.0.1:50041
+1495391736003	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495391740680	Marionette	INFO	Listening on port 39321
+1495391740821	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1495392141502	geckodriver	INFO	Listening on 127.0.0.1:54509
+1495392142594	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392146890	Marionette	INFO	Listening on port 37035
+1495392146987	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495392188927	geckodriver	INFO	Listening on 127.0.0.1:41379
+1495392190034	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392194535	Marionette	INFO	Listening on port 40537
+1495392194731	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495392222025	geckodriver	INFO	Listening on 127.0.0.1:43197
+1495392223122	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392228098	Marionette	INFO	Listening on port 42183
+1495392228187	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1495392311672	geckodriver	INFO	Listening on 127.0.0.1:56479
+1495392312769	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392318088	Marionette	INFO	Listening on port 38247
+1495392318287	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495392424900	geckodriver	INFO	Listening on 127.0.0.1:47405
+1495392425021	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392430325	Marionette	INFO	Listening on port 37545
+1495392430405	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495392474886	geckodriver	INFO	Listening on 127.0.0.1:52791
+1495392475989	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392481496	Marionette	INFO	Listening on port 38729
+1495392481572	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+Handler function NetworkEventActorProxy.addSecurityInfo threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+NetworkResponseListener.prototype._getSecurityInfo<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:495:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+onStartRequest@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:436:5
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addSecurityInfo threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+NetworkResponseListener.prototype._getSecurityInfo<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:495:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+onStartRequest@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:436:5
+Line: 1670, column: 0
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+console.error: 
+  Handler function NetworkEventActorProxy.addResponseContent threw an exception: [Exception... "Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]"  nsresult: "0xc1f30001 (NS_ERROR_NOT_INITIALIZED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: NetworkEventActorProxy.methodFactory/< :: line 1670"  data: no]
+Stack: NetworkEventActorProxy.methodFactory/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1670:5
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+_onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:628:5
+onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:577:7
+onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
+Line: 1670, column: 0
+1495392670869	geckodriver	INFO	Listening on 127.0.0.1:59005
+1495392671081	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392677539	Marionette	INFO	Listening on port 41921
+1495392677709	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495392778400	Marionette	INFO	New connections will no longer be accepted
+[Child 31587] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495392860874	geckodriver	INFO	Listening on 127.0.0.1:60687
+1495392861961	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495392866301	Marionette	INFO	Listening on port 40527
+1495392866430	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495392967981	Marionette	INFO	New connections will no longer be accepted
+[Child 31815] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495392996761	geckodriver	INFO	Listening on 127.0.0.1:59413
+1495392997843	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495393002400	Marionette	INFO	Listening on port 45823
+1495393002505	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495393103590	Marionette	INFO	New connections will no longer be accepted
+[Child 31998] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495395435927	geckodriver	INFO	Listening on 127.0.0.1:46645
+1495395437018	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+Failed to import the site module
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site.py", line 580, in <module>
+    main()
+  File "/usr/lib/python3.5/site.py", line 566, in main
+    known_paths = addusersitepackages(known_paths)
+  File "/usr/lib/python3.5/site.py", line 287, in addusersitepackages
+    user_site = getusersitepackages()
+  File "/usr/lib/python3.5/site.py", line 263, in getusersitepackages
+    user_base = getuserbase() # this will also set USER_BASE
+  File "/usr/lib/python3.5/site.py", line 252, in getuserbase
+    from sysconfig import get_config_var
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 954, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 896, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1139, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1113, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1225, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1264, in _fill_cache
+KeyboardInterrupt
+1495395441770	geckodriver	INFO	Listening on 127.0.0.1:34227
+1495395442862	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495395447183	Marionette	INFO	Listening on port 40457
+1495395447329	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 823] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495412462409	geckodriver	INFO	Listening on 127.0.0.1:45687
+1495412463509	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495412467800	Marionette	INFO	Listening on port 35889
+1495412467950	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495412604403	geckodriver	INFO	Listening on 127.0.0.1:55227
+1495412605490	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495412609645	Marionette	INFO	Listening on port 44521
+1495412609756	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495412638708	Marionette	INFO	New connections will no longer be accepted
+[Child 5269] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495412833506	geckodriver	INFO	Listening on 127.0.0.1:60701
+1495412834593	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495412839346	Marionette	INFO	Listening on port 38015
+1495412839450	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495412868074	Marionette	INFO	New connections will no longer be accepted
+[Child 6007] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495412961016	geckodriver	INFO	Listening on 127.0.0.1:57967
+1495412962101	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495412966235	Marionette	INFO	Listening on port 44843
+1495412966335	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495412995396	Marionette	INFO	New connections will no longer be accepted
+[Child 6221] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495413011773	geckodriver	INFO	Listening on 127.0.0.1:41809
+1495413011880	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495413016260	Marionette	INFO	Listening on port 35219
+1495413016392	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495413045031	Marionette	INFO	New connections will no longer be accepted
+[Child 6379] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495413236612	geckodriver	INFO	Listening on 127.0.0.1:54655
+1495413237696	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495413241790	Marionette	INFO	Listening on port 42681
+1495413241912	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495413270823	Marionette	INFO	New connections will no longer be accepted
+[Child 6619] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495434025728	geckodriver	INFO	Listening on 127.0.0.1:52681
+1495434026812	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495434031157	Marionette	INFO	Listening on port 33011
+1495434031301	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495434050055	Marionette	INFO	New connections will no longer be accepted
+[Child 8871] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495434242102	geckodriver	INFO	Listening on 127.0.0.1:53985
+1495434243195	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495434247264	Marionette	INFO	Listening on port 46167
+1495434247334	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495434311807	Marionette	INFO	New connections will no longer be accepted
+1495434399942	geckodriver	INFO	Listening on 127.0.0.1:33647
+1495434401035	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495434405335	Marionette	INFO	Listening on port 38401
+1495434405403	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495434423098	Marionette	INFO	New connections will no longer be accepted
+[Child 9358] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495434439205	geckodriver	INFO	Listening on 127.0.0.1:57679
+1495434440290	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495434444577	Marionette	INFO	Listening on port 38551
+1495434444700	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495434519730	Marionette	INFO	New connections will no longer be accepted
+[Child 9506] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495434697950	geckodriver	INFO	Listening on 127.0.0.1:34267
+1495434699036	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495434703335	Marionette	INFO	Listening on port 41557
+1495434703480	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495434774038	Marionette	INFO	New connections will no longer be accepted
+1495434842523	geckodriver	INFO	Listening on 127.0.0.1:54183
+1495434843608	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495434848112	Marionette	INFO	Listening on port 46691
+1495434848191	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495434918644	Marionette	INFO	New connections will no longer be accepted
+[Child 9997] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495435147096	geckodriver	INFO	Listening on 127.0.0.1:33735
+1495435148181	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495435152548	Marionette	INFO	Listening on port 43255
+1495435152648	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:10302): Gdk-WARNING **: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1001.
+
+1495435238293	geckodriver	INFO	Listening on 127.0.0.1:45369
+1495435239386	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495435243798	Marionette	INFO	Listening on port 35511
+1495435243936	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495435314396	Marionette	INFO	New connections will no longer be accepted
+[Child 10486] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495435390757	geckodriver	INFO	Listening on 127.0.0.1:36945
+1495435391853	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495435396469	Marionette	INFO	Listening on port 38985
+1495435396587	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495435464491	Marionette	INFO	New connections will no longer be accepted
+[Child 10698] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495435568351	geckodriver	INFO	Listening on 127.0.0.1:34261
+1495435569441	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495435573654	Marionette	INFO	Listening on port 41663
+1495435573795	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495435646255	Marionette	INFO	New connections will no longer be accepted
+[Child 10927] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495435722028	geckodriver	INFO	Listening on 127.0.0.1:35677
+1495435723121	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495435727328	Marionette	INFO	Listening on port 44497
+1495435727411	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495435784504	Marionette	INFO	New connections will no longer be accepted
+[Child 11138] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495435836611	geckodriver	INFO	Listening on 127.0.0.1:34955
+1495435837718	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495435842585	Marionette	INFO	Listening on port 46345
+1495435842770	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495435925521	Marionette	INFO	New connections will no longer be accepted
+[Child 11591] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495436024318	geckodriver	INFO	Listening on 127.0.0.1:55859
+1495436024406	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495436028656	Marionette	INFO	Listening on port 36217
+1495436028791	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:11835): Gdk-WARNING **: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1001.
+
+1495436041383	geckodriver	INFO	Listening on 127.0.0.1:32907
+1495436042529	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495436046887	Marionette	INFO	Listening on port 40233
+1495436046997	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:11985): Gdk-WARNING **: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1001.
+
+1495436073785	geckodriver	INFO	Listening on 127.0.0.1:42499
+1495436074875	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495436079423	Marionette	INFO	Listening on port 42087
+1495436079572	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495436160302	geckodriver	INFO	Listening on 127.0.0.1:52819
+1495436161390	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495436165641	Marionette	INFO	Listening on port 42603
+1495436165803	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495436214956	Marionette	INFO	New connections will no longer be accepted
+[Child 12328] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
+1495436286253	geckodriver	INFO	Listening on 127.0.0.1:42281
+1495436287341	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495436291711	Marionette	INFO	Listening on port 34817
+1495436291861	Marionette	WARN	TLS certificate errors will be ignored for this session
+1495436339967	Marionette	INFO	New connections will no longer be accepted
+[Child 12536] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-tJ4O1e/firefox-53.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 346
