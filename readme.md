@@ -1,4 +1,2 @@
-**STEP:**
-1. Directories have been made.
-
-
+**STATUS:**
+1. **The first stage was done.**

@@ -1,11 +1,7 @@
 *.pyc
 *.pyo
 .idea/
-*.json
-retest.py
-/test.py
-test_sdk.py
-.gitignore
 fb
 facebook_miner.py
+facebook_scrapper.py
 .login.txt

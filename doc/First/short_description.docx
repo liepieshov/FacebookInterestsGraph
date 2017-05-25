@@ -1,0 +1,67 @@
+﻿Selenium/Webdriver API
+Selenium – це бібліотека на Python та на багто різних мов програмування, яка може працювати з наступними WebDrivers:
+webdriver.Firefox
+webdriver.FirefoxProfile
+webdriver.Chrome
+webdriver.ChromeOptions
+webdriver.Ie
+webdriver.Opera
+webdriver.PhantomJS
+webdriver.Remote
+webdriver.DesiredCapabilities
+webdriver.ActionChains
+webdriver.TouchActions
+webdriver.Proxy.
+Надалі я буду використовувати “geckodriver”(WebDriver для Firefox).
+Головним в Selenium є import class webriwer:
+from selenium import webriver, з яким і буде проходити вся інтеракція.
+Селеніум надає змогу працювати якраз з браузером, який ти обираєш вище, як з об’єктом. Для цього є наступні методи.
+Driver.get(url): метод, який переходить на задану URL адресу. Url == str.
+Driver.close(): закриває веб браузер(одне вікно) == веб драйвер.
+Далі, будучи на сторінці, можна використовувати інші методи для пошуку об’єктів на сторінці.
+find_element_by_name 
+find_element_by_xpath 
+find_element_by_link_text 
+find_element_by_partial_link_text 
+find_element_by_tag_name 
+find_element_by_class_name 
+find_element_by_css_selector
+find_element_by_id  
+Всі ці методи приймають, як стічку відповідний локатор(зрозуміло по назів) і повертають instance of class webelement.
+find_elements_by_xpath 
+find_elements_by_link_text 
+find_elements_by_partial_link_text 
+find_elements_by_tag_name 
+find_elements_by_class_name 
+find_elements_by_css_selector 
+	find_elements_by_name 
+Всі ці методи працюють так як і попередні тільки поевртають список об’єктів.
+Маючи об’єкти полів можна їх заповнювати за допомогою методу:
+driver.send_key(value): value == str, Текст яким ви хочете заповнити поле, якщо це можливо.
+Можна видаляти тест з елемента, якщо це поле для вводу:
+driver.clear(): очищає поле driver.
+Можна клікати на елементи:
+driver.click(): клікає на елемент driver.
+Можна працювати з елементами, які можна вибирати(radiobuttons):
+deselect_all()
+deselect_by_index(index)
+deselect_by_value(value)
+deselect_by_visible_text(text)
+select_by_index(index)
+select_by_value(value)
+select_by_visible_text(text)
+all_selected_options
+first_selected_option
+Також в сторінок є такі методи як
+driver.title(): повертає назву сторінки
+current_url: повертає поточну адресу сторінки
+set_window_size(width, height, windowHandle='current'): змінити розмір вікна перегляду
+set_page_load_timeout(time_to_wait): задати час, який буде даватись на завантаження сторінки, потім буде викливкатися помилка
+save_screenshot(filename): зберегти скріншот, як файл з назвою filenam. Example: “screenshot.png”
+refresh(): перезавантажити сторінку.
+get_cookie(name): повертає один кукі за назвою
+forward(): переходить вперед по історії браузера
+delete_cookie(name): удаляє кукі за назвою
+execute_script(script, *args): виконує стрічку script в даному вікні
+maximize_window(): розширює вікно на всеь екран
+quit(): виходить з веббраузера закриваючи всі вікна.
