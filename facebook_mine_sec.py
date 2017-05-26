@@ -25,7 +25,7 @@ class WebGetter:
         print("Logged in...")
 
     def friends_scrapper(self, pg_id):
-        url = "https://www.facebook.com/%s/friends" % pg_id
+        url = "%s/friends" % pg_id
         self.browser.get(url)
         SCROLL_PAUSE_TIME = 3
 
@@ -72,8 +72,8 @@ class WebGetter:
     def close_browser(self):
         self.browser.quit()
 
-    def write_file(self, content):
-        with open("result.txt", "w") as file_write:
+    def write_file(self, content, file_name="result.txt"):
+        with open(file_name, "w") as file_write:
             for sent in content:
                 file_write.write("%s\n" % sent)
 # WebGetter.add_error("LOL")
@@ -81,9 +81,12 @@ display = Display(visible=0, size=(800, 600))
 display.start()
 zminna = WebGetter()
 time_ = time.time()
+zminna.login_facebook()
 try:
-    zminna.login_facebook()
-    zminna.write_file(zminna.friends_scrapper("alice.mizer.7"))
+    with open("./data/next.txt", "r", encoding="utf-8") as file_read:
+        cont = file_read.readlines()
+        for i in range(len(cont) // 2):
+            zminna.write_file(zminna.friends_scrapper(i * 2 + 1), file_name="%s.txt" % cont[i * 2])
 finally:
     zminna.close_browser()
     display.stop()
