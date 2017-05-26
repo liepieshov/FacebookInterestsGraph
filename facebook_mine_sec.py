@@ -48,10 +48,15 @@ class WebGetter:
         ids_list = list()
         for block in blocks:
             try:
-                link = block.find_element_by_css_selector('div.fsl.fwb.fcb a').get_attribute("href")
-                ids_list.append(self.get_the_id(link))
+                link = block.find_element_by_css_selector('div.fsl.fwb.fcb a')
+                name = link.text
+                link = link.get_attribute("href")
             except Exception as e:
                 self.add_error(e)
+                name = ""
+                link = ""
+            ids_list.append(name)
+            ids_list.append(link)
         return ids_list
 
     @staticmethod
