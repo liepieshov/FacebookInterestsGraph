@@ -1,0 +1,26 @@
+﻿Можливості XML
+Взагалі XML увійшов в історію через свою незахищеність і через свої дос атаки – Billion laughs.
+Взагалі XML файл виглядає як файл тегів, в яких є свої атрибути і значення всередині двох тегів(Відриваючого і закриваючого).
+Для пайтона я буду використовувати бібліотеку xml.etree.ElementTree.
+В ній є наступний функціонал:
+xml.etree.ElementTree.parse(source, parser=None): бере як аргумент назву файлу, який парсить як дерево елементів XML
+xml.etree.ElementTree.fromstring(text): бере як аргумент xml вміст у вигляді однієї стрічки, яку парсить у дерево елементів XML
+xml.etree.ElementTree.dump(elem): записує element tree в stdout
+xml.etree.ElementTree.SubElement(parent, tag, attrib={}, **extra): створює підтег тегу parent з назвою tag і словником атрибутів attrib
+xml.etree.ElementTree.tostring(element, encoding="us-ascii", method="xml", *, short_empty_elements=True): переводить xml element tree в string формат
+xml.etree.ElementTree.Element.tag повертає імя цього тегу
+xml.etree.ElementTree.Element.text повертає те, що всередині цього тегу(між двома його частинами)
+xml.etree.ElementTree.Element.attrib повертає словник атрибутів цього тега
+xml.etree.ElementTree.Element.clear() удаляє тег і весь його вміст
+xml.etree.ElementTree.Element.remove(subelement) удаляє піделемент цього тега, якзо він є
+xml.etree.ElementTree.Element.find(match, namespaces=None) знаходить перший піделемент, який збіається чимось з str-match
+xml.etree.ElementTree.Element.findall(match, namespaces=None) робить те саме, що й попередній метод тільки вертає ліст всіх таких елементів
+xml.etree.ElementTree.Element.getchildren() вертає всі піделементи даного тегу
+xml.etree.ElementTree.Element.iter(tag=None) створює ітератор по всіх субтегам цього тега
+xml.etree.ElementTree.ElementTree._setroot(element) змінює головний елемент цього дерева
+xml.etree.ElementTree.ElementTree.find(match, namespaces=None) робить те саме, що було описано вище, але для всьо дерева
+xml.etree.ElementTree.ElementTree.findall(match, namespaces=None) повертає ліст всіх знайдених тегів за методом вище
+xml.etree.ElementTree.ElementTree.iter(tag=None) створює та повертає ітератор по всьому дереву
+xml.etree.ElementTree.ElementTree.write(file, encoding="us-ascii", xml_declaration=None, default_namespace=None, method="xml", *, short_empty_elements=True) записує дерево в файл file
+
+Є багато інших методів та класів, але я вважаю цих достатньо, щоб в загальному описати роботу цієї бібліотеки.

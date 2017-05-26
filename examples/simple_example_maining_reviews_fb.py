@@ -51,7 +51,7 @@ def getting_reviews(browser, pg):
 browser = webdriver.Firefox()
 # browser.implicitly_wait(3)
 try:
-    with open("reviews_csatucu.txt", "w") as file_write:
+    with open("reviews_csatucu.txt", "w", encoding="utf-8") as file_write:
         file_write.write(getting_reviews(browser, "csatucu"))
 finally:
     browser.close()

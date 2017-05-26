@@ -3,5 +3,5 @@
 .idea/
 fb
 facebook_miner.py
-facebook_scrapper.py
+facebook_mine_sec.py
 .login.txt
