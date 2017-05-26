@@ -1,19 +1,55 @@
 from arrays import Array, DynamicArray
 
 
+class Node:
+    """
+    A simple Node (representing a single connection between two users)
+    for Graph of class GraphNetworkADT
+    """
+    def __init__(self, *elements):
+        """
+        Taking two arguments from elemnts and saves it into items Array
+        :param elements: instances of Edge class
+        """
+        self.items = Array(2)
+        self.items[0] = elements[0]
+        self.items[1] = elements[1]
+
+    def __eq__(self, other):
+        """
+        Checks the equality of Nodes
+        :param other: instance of class Node or Tuple or List of instances of class Edge
+        :return: return True if other Node is equal to this Node
+        """
+        if isinstance(other, Node):
+            if (self.items[0] == other.items[0]
+                and self.items[1] == other.items[1])\
+                or (self.items[1] == other.items[0]
+                    and self.items[0] == other.items[1]):
+                return True
+            return False
+        else:
+            if (self.items[0] == other[0]
+                and self.items[1] == other[1])\
+                or (self.items[1] == other[0]
+                    and self.items[0] == other[1]):
+                return True
+            return False
+
+
 class Edge:
     """
-    A simple Edge for Graph of class GraphNetworkADT
+    A simple Edge (representing a single user) for Graph of class GraphNetworkADT
     """
     def __init__(self, name="Name Surname", user_id="ID"):
         """
-        Initialising class with DynamicArray friends_list; strings name and id
+        Initialising class with strings name and id
         :param name: str, user name
         :param user_id: str, link to the user's page
         """
         self.name = name
         self.id = user_id
-        self.friends_list = DynamicArray()
+        # self.friends_list = DynamicArray()
 
     def __eq__(self, other):
         """
@@ -30,13 +66,16 @@ class GraphNetworkADT:
     """
     def __init__(self, max_size):
         """
-        Initialising class with int size=0 and array edges_list of size max_size
+        Initialising class with int size=0; 
+        array edges_list of size max_size;
+        dynamic array nodes_list
         :param max_size: the size of edges_list
         """
         self.size = 0
         self.edges_list = Array(max_size)
+        self.nodes_list = DynamicArray()
 
-    def add(self, name, user_id):
+    def add_node(self, name, user_id):
         """
         Adds new Edge to the edges_list by name and link
         :param name: str, name of the user
@@ -56,6 +95,7 @@ class GraphNetworkADT:
         # Parsing the edges_list by index
         for index in range(self.size):
             if self.edges_list[index] == item:
+                # Returning the instance of class Edge
                 return self.edges_list[index]
 
     @staticmethod
@@ -75,7 +115,7 @@ class GraphNetworkADT:
             inst = GraphNetworkADT(length_data)
             # Filling the array with the data from opened file
             for row in range(length_data):
-                inst.add(content[2 * row], content[2 * row + 1])
+                inst.add_node(content[2 * row], content[2 * row + 1])
 
         return inst
 
@@ -86,10 +126,10 @@ class GraphNetworkADT:
         :return: None
         """
         for index in range(self.size):
-            # getting the name of single user
-            name = self.edges_list[index].name
+            # getting the instance of single user
+            inst = self.edges_list[index]
             # opening the data file of this user
-            with open("%s.txt" % name, "r", encoding="utf-8") as file_read:
+            with open("%s.txt" % inst.name, "r", encoding="utf-8") as file_read:
                 # reading the whole content of the file as a list of strings
                 cont = file_read.readlines()
                 # parsing content of the file by index
@@ -103,15 +143,29 @@ class GraphNetworkADT:
                         "name": u_name,
                         "id": u_id
                     }
-                    # saving connection between users
+                    # saving connection between users as a Node in the node_list
                     user_instance = u_dict in self
                     if user_instance:
-                        self.edges_list[index].friends_list.append(user_instance)
+                        self.nodes_list.append(Node(inst, user_instance))
 
-
-class Graph:
-    def __init__(self):
-        self.nodes = DynamicArray()
-
-    def __getitem__(self, item):
-        return self.nodes[item]
+    def gephi_write(self, files={"nodes": "nodes.csv", "edges": "edges.csv"}):
+        """
+        Writes to csv files in gephi format
+        :param files: the dictionary of the file-names
+        :return: None
+        """
+        with open(files["edges"], "w", encoding="utf-8") as file:
+            file.write("ID,Labels,Urls\n")
+            for index in range(self.size):
+                file.write("%s,%s,%s\n" % (
+                    id(self.edges_list[index]),
+                    self.edges_list[index].name,
+                    self.edges_list[index].id
+                ))
+        with open(files["nodes"], "w", encoding="utf-8") as file:
+            file.write("Source,Target\n")
+            for index in range(len(self.nodes_list)):
+                file.write("%s,%s\n" % (
+                    id(self.nodes_list[index].items[0]),
+                    id(self.nodes_list[index].items[1])
+                ))
