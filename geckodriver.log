@@ -163,3 +163,17 @@ _onComplete@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devt
 onStreamClose@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:585:7
 onInputStreamReady@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:676:7
 Line: 1670, column: 0
+1495829477326	geckodriver	INFO	Listening on 127.0.0.1:60829
+1495829478426	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495829484066	Marionette	INFO	Listening on port 40473
+1495829484395	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:7401): Gdk-WARNING **: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1001.
+
+1495829609756	geckodriver	INFO	Listening on 127.0.0.1:34159
+1495829609842	geckodriver::marionette	INFO	Starting browser /usr/lib/firefox/firefox.sh with args ["-marionette"]
+1495829614202	Marionette	INFO	Listening on port 33261
+1495829614364	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:7641): Gdk-WARNING **: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1001.
+

@@ -1,4 +1,4 @@
-from arrays import Array, DynamicArray
+from graph_adt.arrays import Array, DynamicArray
 
 
 class Node:
@@ -99,7 +99,7 @@ class GraphNetworkADT:
                 return self.edges_list[index]
 
     @staticmethod
-    def create_instance(data_file="../data/next_sec.txt"):
+    def create_instance(data_file="../data/interested.txt"):
         """
         Creates the instance of GraphNetworkADT with data of Edges from data_file
 
@@ -115,7 +115,10 @@ class GraphNetworkADT:
             inst = GraphNetworkADT(length_data)
             # Filling the array with the data from opened file
             for row in range(length_data):
-                inst.add_node(content[2 * row], content[2 * row + 1])
+                u_name = content[2 * row].strip()
+                u_url = content[2 * row + 1].strip()
+                if u_name and u_url:
+                    inst.add_node(u_name, u_url)
 
         return inst
 
