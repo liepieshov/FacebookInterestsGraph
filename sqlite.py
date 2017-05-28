@@ -22,13 +22,15 @@ with con:
     user_id = 0
     for user_name, user_link in open_file("data/will_go_lst.txt"):
         cur.execute('INSERT INTO Nodes VALUES(?, ?, ?)', (user_id, user_name, user_link))
-        #cur.execute("CREATE TABLE Nodes"+str(user_id)+"(Id INT, Name TEXT, Url TEXT)")
         cur.execute("DROP TABLE IF EXISTS Nodes" + str(user_id))
-        # u_id = 0
-        # try:
-        #     for u_name, u_link in open_file("db/" + user_name + ".txt"):
-        #         cur.execute('INSERT INTO Nodes' + str(user_id) + ' VALUES('+ str(u_id) +', '+ u_name +', '+ u_link +')')
-        #         u_id += 1
-        # except Exception as e:
-        #     print(e)
+        cur.execute("CREATE TABLE Nodes"+str(user_id)+"(Id INT, Name TEXT, Url TEXT)")
+
+        u_id = 0
+        try:
+            for u_name, u_link in open_file("db/" + user_name + ".txt"):
+                lie = 'INSERT INTO Nodes' + str(user_id) + ' VALUES(?, ?, ?)'
+                cur.execute(lie, (u_id, u_name, u_link))
+                u_id += 1
+        except Exception as e:
+            print(e)
         user_id += 1
