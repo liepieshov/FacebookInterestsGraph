@@ -4,6 +4,9 @@
 fb
 facebook_miner.py
 .login.txt
-db2
+<<<<<<< HEAD
 geckodriver.log
 
+=======
+geckodriver.log
+>>>>>>> 94973eb24b074293e08d22cbbefca3381bcc4846
