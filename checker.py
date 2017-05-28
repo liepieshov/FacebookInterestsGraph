@@ -20,9 +20,9 @@ def open_file(file_name):
 file_names = open_file("./data/will_go_lst.txt")
 # print(len(file_names))
 counter = 0
-with open("./db/else_data.txt", "w", encoding="utf-8") as file_w:
+with open("./data/ready_data.txt", "w", encoding="utf-8") as file_w:
     for u_name, u_link in file_names:
-        if u_name+".txt" not in onlyfiles:
+        if u_name+".txt" in onlyfiles:
             file_w.write("%s\n%s\n" % (u_name, u_link))
             counter += 1
 
