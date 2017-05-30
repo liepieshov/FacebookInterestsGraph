@@ -26,10 +26,11 @@ class WebGetter:
         print("Logged in...")
 
     def friends_scrapper(self, pg_id):
-        url = "%s/friends" % pg_id
+        url = "%s/friends" % self.link_editor(pg_id)
         self.browser.get(url)
         # SCROLL_PAUSE_TIME = 1.5
         time.sleep(1.5)
+        print(len(self.browser.find_elements_by_css_selector("img._359.img")), "Len of selectors list=)")
         while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1:
             # Scroll down to bottom
             self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -64,12 +65,12 @@ class WebGetter:
         return ids_list
 
     @staticmethod
-    def get_the_id(url):
-        if "id" in url:
-            id_user = url[url.find("=") + 1:url.find("&")]
+    def link_editor(line):
+        if "profile.php?id=" in line:
+            line = "https://www.facebook.com/" + line[40:line.find("&")]
         else:
-            id_user = url[25:url.find("?")]
-        return id_user
+            line = line[:line.find("?fref=")]
+        return line
 
     @staticmethod
     def add_error(content):
