@@ -30,6 +30,9 @@ class WebGetter:
         self.browser.get(url)
         # SCROLL_PAUSE_TIME = 1.5
         time.sleep(1.5)
+        while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1:
+            # Scroll down to bottom
+            self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         # Get scroll height
         # last_height = self.browser.execute_script("return document.body.scrollHeight")
         # while True:
