@@ -1,4 +1,4 @@
-from graph_adt.arrays import Array, DynamicArray
+from .arrays import Array, DynamicArray
 
 
 class Node:
@@ -93,13 +93,19 @@ class GraphNetworkADT:
         :return: The element(instance of Edge) if the element is in the list, otherwise: None
         """
         # Parsing the edges_list by index
-        for index in range(self.size):
-            if self.edges_list[index] == item:
-                # Returning the instance of class Edge
-                return self.edges_list[index]
+        if isinstance(item, Node):
+            for index in range(len(self.nodes_list)):
+                if self.nodes_list[index] == item:
+                    return True
+        else:
+            for index in range(self.size):
+                if self.edges_list[index] == item:
+                    # Returning the instance of class Edge
+                    return True
+        return False
 
     @staticmethod
-    def create_instance(data_file="../data/interested.txt"):
+    def create_instance(data_file="../data/will_go_lst.txt"):
         """
         Creates the instance of GraphNetworkADT with data of Edges from data_file
 
@@ -128,11 +134,14 @@ class GraphNetworkADT:
         and filling the arrays of each user's nodes
         :return: None
         """
+        c = 0
         for index in range(self.size):
+            c += 1
+            print(c)
             # getting the instance of single user
             inst = self.edges_list[index]
             # opening the data file of this user
-            with open("%s.txt" % inst.name, "r", encoding="utf-8") as file_read:
+            with open("./db/%s.txt" % inst.name, "r", encoding="utf-8") as file_read:
                 # reading the whole content of the file as a list of strings
                 cont = file_read.readlines()
                 # parsing content of the file by index
@@ -140,16 +149,30 @@ class GraphNetworkADT:
                     # getting the name of the user
                     u_name = cont[edge_index * 2].strip()
                     # getting the link to the user's page
-                    u_id = cont[edge_index * 2 + 1].strip()
+                    u_id = GraphNetworkADT.link_editor(cont[edge_index * 2 + 1].strip())
                     # putting link and name to the dict
                     u_dict = {
                         "name": u_name,
                         "id": u_id
                     }
                     # saving connection between users as a Node in the node_list
-                    user_instance = u_dict in self
-                    if user_instance:
-                        self.nodes_list.append(Node(inst, user_instance))
+                    if u_dict in self:
+                        user_instance = self.find_edge(u_dict)
+                        self.nodes_list.append(Node(user_instance, inst))
+
+    def find_edge(self, item):
+        for index in range(len(self.edges_list)):
+            if self.edges_list[index] == item:
+                return self.edges_list[index]
+        return False
+
+    @staticmethod
+    def link_editor(line):
+        if "profile.php?id=" in line:
+            line = "https://www.facebook.com/" + line[40:line.find("&")]
+        else:
+            line = line[:line.find("?fref=")]
+        return line
 
     def gephi_write(self, files={"nodes": "nodes.csv", "edges": "edges.csv"}):
         """
@@ -158,7 +181,7 @@ class GraphNetworkADT:
         :return: None
         """
         with open(files["edges"], "w", encoding="utf-8") as file:
-            file.write("ID,Labels,Urls\n")
+            file.write("ID,Label,Urls\n")
             for index in range(self.size):
                 file.write("%s,%s,%s\n" % (
                     id(self.edges_list[index]),

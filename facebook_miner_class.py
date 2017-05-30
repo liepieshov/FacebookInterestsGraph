@@ -28,22 +28,22 @@ class WebGetter:
     def friends_scrapper(self, pg_id):
         url = "%s/friends" % pg_id
         self.browser.get(url)
-        SCROLL_PAUSE_TIME = 1.5
-        time.sleep(3)
+        # SCROLL_PAUSE_TIME = 1.5
+        time.sleep(1.5)
         # Get scroll height
-        last_height = self.browser.execute_script("return document.body.scrollHeight")
-        while True:
-            # Scroll down to bottom
-            self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
-            # Wait to load page
-            time.sleep(SCROLL_PAUSE_TIME)
-
-            # Calculate new scroll height and compare with last scroll height
-            new_height = self.browser.execute_script("return document.body.scrollHeight")
-            if new_height == last_height:
-                break
-            last_height = new_height
+        # last_height = self.browser.execute_script("return document.body.scrollHeight")
+        # while True:
+        #     # Scroll down to bottom
+        #     self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        #
+        #     # Wait to load page
+        #     time.sleep(SCROLL_PAUSE_TIME)
+        #
+        #     # Calculate new scroll height and compare with last scroll height
+        #     new_height = self.browser.execute_script("return document.body.scrollHeight")
+        #     if new_height == last_height:
+        #         break
+        #     last_height = new_height
         print("Scrolled to the bottom...")
         blocks = self.browser.find_elements_by_xpath("//div[@data-testid='friend_list_item']")
         ids_list = list()
@@ -89,11 +89,11 @@ inst = WebGetter()
 time_ = time.time()
 inst.login_facebook()
 try:
-    with open("./data/will_go_lst.txt", "r", encoding="utf-8") as file_read:
+    with open("./data/interested.txt", "r", encoding="utf-8") as file_read:
         cont = file_read.readlines()
         for i in range(len(cont) // 2):
             print("Current profile index is %s" % str(i))
-            inst.write_file(inst.friends_scrapper(cont[i * 2 + 1].strip()), file_name="./db_add/%s.txt" % cont[i * 2].strip())
+            inst.write_file(inst.friends_scrapper(cont[i * 2 + 1].strip()), file_name="./db_interested/%s.txt" % cont[i * 2].strip())
 finally:
     inst.close_browser()
     display.stop()
