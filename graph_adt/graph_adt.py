@@ -169,9 +169,9 @@ class GraphNetworkADT:
     @staticmethod
     def link_editor(line):
         if "profile.php?id=" in line:
-            line = "https://www.facebook.com/" + line[40:line.find("&")]
+            line = "https://www.facebook.com/" + line[40:line.find("&") + 1]
         else:
-            line = line[:line.find("?fref=")]
+            line = line[:line.find("?fref=") + 1]
         return line
 
     def gephi_write(self, files={"nodes": "nodes.csv", "edges": "edges.csv"}):
