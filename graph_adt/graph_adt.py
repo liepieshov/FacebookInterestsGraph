@@ -134,14 +134,14 @@ class GraphNetworkADT:
         and filling the arrays of each user's nodes
         :return: None
         """
-        c = 0
+        #c = 0
         for index in range(self.size):
-            c += 1
-            print(c)
+            #c += 1
+            #print(c)
             # getting the instance of single user
             inst = self.edges_list[index]
             # opening the data file of this user
-            with open("./db/%s.txt" % inst.name, "r", encoding="utf-8") as file_read:
+            with open("./db_interested/%s.txt" % inst.name, "r", encoding="utf-8") as file_read:
                 # reading the whole content of the file as a list of strings
                 cont = file_read.readlines()
                 # parsing content of the file by index
@@ -151,10 +151,12 @@ class GraphNetworkADT:
                     # getting the link to the user's page
                     u_id = GraphNetworkADT.link_editor(cont[edge_index * 2 + 1].strip())
                     # putting link and name to the dict
+                    #print(u_id)
                     u_dict = {
                         "name": u_name,
                         "id": u_id
                     }
+                    # print(u_dict)
                     # saving connection between users as a Node in the node_list
                     if u_dict in self:
                         user_instance = self.find_edge(u_dict)
@@ -169,12 +171,12 @@ class GraphNetworkADT:
     @staticmethod
     def link_editor(line):
         if "profile.php?id=" in line:
-            line = "https://www.facebook.com/" + line[40:line.find("&") + 1]
+            line = "https://www.facebook.com/" + line[40:line.find("&")]
         else:
-            line = line[:line.find("?fref=") + 1]
+            line = line[:line.find("?fref=")]
         return line
 
-    def gephi_write(self, files={"nodes": "nodes.csv", "edges": "edges.csv"}):
+    def gephi_write(self, files={"nodes": "edges.csv", "edges": "nodes.csv"}):
         """
         Writes to csv files in gephi format
         :param files: the dictionary of the file-names
