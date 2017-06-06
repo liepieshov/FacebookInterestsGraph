@@ -65,7 +65,7 @@ class NetworkGraph:
     Class representing the facebook network graph
     """
 
-    def __init__(self, file_name):
+    def __init__(self, file_name="database.db"):
         """
         Connects to the database in a new session
         :param file_name: the name of the database file
@@ -199,7 +199,7 @@ class NetworkGraph:
                 filew.write("%d,%d\n" % (source, target))
 
     def read_friends_from_file(self, user, file):
-        with open(file, "r", encoding="urf-8") as data_file:
+        with open(file, "r", encoding="utf-8") as data_file:
             content = data_file.readlines()
 
             length_half = len(content) // 2
@@ -210,45 +210,3 @@ class NetworkGraph:
 
                 new_node = self.add_node(name=name, facebook_id=facebook_id)
                 user.add_friend(new_node)
-
-                # engine = db.create_engine('sqlite:///one.db')
-
-                # Base.metadata.drop_all(engine)
-                # Base.metadata.create_all(engine)
-
-                # print(len(session.query(Node).all()))
-
-                # session.query(Node).filter("A" == Node.name).delete()
-                # session.commit()
-
-                # print(session.query(Node).all())
-                # a = NetworkGraph("one.db")
-
-
-                # print(a.session.query(NetworkGraph.Node).all())
-                # print(a, a.session.query(a.Node).all())
-
-                # def read_from_files(file_name, db_file_name, reload=True):
-                #     data_base = NetworkGraph(db_file_name)
-                # a = NetworkGraph("one.db")
-                # a.clear()
-                # a.session.add(Node(name="KOSTYA", facebook_id="12345"))
-                # a.session.commit()
-                # print(a.delete_node(a.get_nodes().filter(Node.name=="KOSTYA")[0]))
-                # a.clear()
-                # print(a.is_empty())
-                # b = a.add_node(name="Kostya", facebook_id="kostia")
-                # a.read_friends_from_file(b, "../db_interested/Kostya Liepieshov.txt")
-                # print(a.get_edges().all())
-                # print(NetworkGraph.id_from_url("https://www.facebook.com/sirenko.anastasia/about?lst=100007370378704%3A100000265076800%3A1496709410"))
-                # print(NetworkGraph.id_from_url("https://www.facebook.com/profile.php?id=100004425577587&lst=100007370378704%3A100004425577587%3A1496708749&sk=friends&source_ref=pb_friends_tl"))
-                # a = NetworkGraph("one.db")
-                # a.clear()
-                # A = a.add_node(name="A", facebook_id="a")
-                # B = a.add_node(name="B", facebook_id="b")
-                # C = a.add_node(name="C", facebook_id="c")
-                # a.add_edge(A, B)
-                # a.add_edge(B, C)
-                # print(a.get_nodes().all(), a.get_edges().all())
-                # print(a.find_path(A, C))
-                # a.write_gephi()
