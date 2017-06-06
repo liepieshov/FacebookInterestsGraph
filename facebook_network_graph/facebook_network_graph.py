@@ -65,7 +65,7 @@ class NetworkGraph:
     Class representing the facebook network graph
     """
 
-    def __init__(self, file_name="database.db"):
+    def __init__(self, file_name="__larger_base.db"):
         """
         Connects to the database in a new session
         :param file_name: the name of the database file
@@ -195,6 +195,7 @@ class NetworkGraph:
                     return res_id
                 else:
                     res_id += link[index]
+        return res_id
 
     def write_gephi(self, wnodes="nodes.csv", wedges="edges.csv"):
         with open(wnodes, "w", encoding="utf-8") as filew:
@@ -223,3 +224,5 @@ class NetworkGraph:
                         user.add_friend(new_node)
                 else:
                     user.add_friend(new_node)
+# a = NetworkGraph("./facebook_network_graph/interested.db")
+# a.write_gephi()
