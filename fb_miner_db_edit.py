@@ -1,11 +1,20 @@
 from selenium import webdriver
 import time
 from pyvirtualdisplay import Display
+from facebook_network_graph.facebook_network_graph import NetworkGraph
 
 
 class WebGetter:
-    def __init__(self):
+    """
+    Class that helps to scrap the data from facebook
+    """
+    def __init__(self, db_file_name="wgdb.db", clear=True):
+        """Creates the new FireFox session and connects to the database.
+        Depending on clear arg could clear the database."""
         self.browser = webdriver.Firefox()
+        self.db = NetworkGraph(db_file_name)
+        if clear:
+            self.db.clear()
 
     def login_facebook(self, login=None, password=None):
         """
@@ -28,7 +37,22 @@ class WebGetter:
         print("Current_url %s" % self.browser.current_url)
         print("Logged in...")
 
-    def friends_scrapper(self, pg_id):
+    def friends_scrapper(self, name, pg_id):
+        """Scrappes the friends data from the page named by name and situated
+        by pg_id on facebook and writes it to database"""
+        pg_id = self.link_editor(pg_id)
+        name = name.strip()
+
+        user = self.db.add_node(name=name, facebook_id=pg_id)
+        try:
+            for name, pg_id in self._friends_scrapper(pg_id):
+                new_user = self.db.add_node(name=name, facebook_id=pg_id)
+                self.db.add_edge(user, new_user)
+        except Exception as e:
+            self.add_error(e)
+
+    def _friends_scrapper(self, pg_id):
+        """Helper function for friends scrapper funct"""
         url = "https://www.facebook.com/%s/friends" % self.link_editor(pg_id)
 
         self.browser.get(url)
@@ -40,61 +64,49 @@ class WebGetter:
         print("Scrolled to the bottom...")
 
         blocks = self.browser.find_elements_by_xpath("//div[@data-testid='friend_list_item']")
-        ids_list = list()
+
         for block in blocks:
             try:
                 link = block.find_element_by_css_selector('div.fsl.fwb.fcb a')
-                name = link.text
-                link = link.get_attribute("href")
+                name = link.text.strip()
+                link = link.get_attribute("href").strip()
             except Exception as e:
                 self.add_error(e)
-                name = ""
-                link = ""
-            ids_list.append(name)
-            ids_list.append(link)
-        return ids_list
+                continue
+            if name:
+                yield name, self.link_editor(link)
 
-    @staticmethod
-    def link_editor(link):
+    def link_editor(self, link):
         """
         Returns the only id from the url line
         """
-        res_id = ""
-        link = link.strip()
-        if "profile.php" in link:
-            id_index = link.find("id=") + 3
-            for index in range(id_index, len(link)):
-                if link[index] in "0123456789":
-                    res_id += link[index]
-                else:
-                    return res_id
-        else:
-            id_index = link.find("facebook.com/") + 13
-            for index in range(id_index, len(link)):
-                if link[index] in "/?&":
-                    return res_id
-                else:
-                    res_id += link[index]
-        return res_id
+        return self.db.id_from_url(link)
 
     @staticmethod
     def add_error(content):
+        """Writes the error to the error log"""
         with open("error.log", "w") as error_log_file:
             error_time = "Error time :: %s" % (time.strftime("%a, %d %b %Y %H:%M:%S",
                                                              time.localtime()))
             error_log_file.write("\n%s\n%s\n" % (error_time, content))
 
     def close_browser(self):
+        """Closes the session"""
         self.browser.quit()
 
     @staticmethod
     def write_file(content, file_name="result.txt"):
+        """Writes content to the file_name file"""
         with open(file_name, "w") as file_write:
             for sent in content:
                 file_write.write("%s\n" % sent)
 
 
 def read_file(file_name):
+    """
+    Reads the file which contains the name of the user followed by the url to its
+    page on facebook and returns the list of this data
+    """
     data = list()
     with open(file_name, "r", encoding="utf-8") as rfile:
         cont = rfile.readlines()
@@ -107,11 +119,15 @@ def read_file(file_name):
     return data
 
 
-def read_perform(input_file, output_dir, wgInst):
+def read_perform(input_file, wgInst):
+    """
+    Perform reading the information from the fb pages of users stored
+    in input_file using instance of class WebGetter as the second positional arg
+    """
     i = 0
     for name, fb_id in read_file(input_file):
         print("Current profile index is %s" % str(i))
-        wgInst.write_file(wgInst.friends_scrapper(fb_id), file_name="%s%s.txt" % (output_dir, name))
+        wgInst.friends_scrapper(fb_id)
         i += 1
 
 
@@ -122,7 +138,7 @@ if __name__ == "__main__":
     time_ = time.time()
     inst.login_facebook()
     try:
-        read_perform("./data/interested.txt", "./db_interested/", inst)
+        read_perform("./data/interested.txt", inst)
     finally:
         inst.close_browser()
         display.stop()
