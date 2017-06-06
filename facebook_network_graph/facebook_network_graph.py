@@ -3,6 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import orm
 
 Base = declarative_base()
+
+# Edges table - represents the pairs of Nodes
 Edge = db.Table(
     "edges", Base.metadata,
     db.Column('source', db.Integer, db.ForeignKey('nodes.id'), primary_key=True),
@@ -26,23 +28,27 @@ class Node(Base):
                                )
 
     def add_friend(self, node):
+        """Adds the node as a friend of the current Node"""
         if node not in self.friends:
             self.friends.append(node)
         if self not in node.friends:
             node.friends.append(self)
 
     def remove_all_friends(self):
+        """Removes all friends pairs of the Node"""
         for friend in self.friends:
             # print(friend, friend.name)
             self.remove_friend(friend)
 
     def remove_friend(self, node):
+        """Remove the friends pair"""
         if node in self.friends:
             self.friends.remove(node)
         if self in node.friends:
             node.friends.remove(self)
 
     def __eq__(self, other):
+        """Checks if two Nodes are equal"""
         if isinstance(other, Node):
             if self.name == other.name and self.facebook_id == other.facebook_id:
                 return True
@@ -57,6 +63,7 @@ class Node(Base):
             raise (ValueError("%s must be Node or dict" % str(other)))
 
     def __repr__(self):
+        """Representation of the Node"""
         return "<Facebook user(Name: %s, Facebook ID: %s)>" % (self.name, self.facebook_id)
 
 
@@ -75,12 +82,18 @@ class NetworkGraph:
         self.session = orm.sessionmaker(bind=self.engine)()
 
     def isNode(self, name, facebook_id):
+        """Checks if the element with such name and facebook_id is in the database"""
         return self.session.query(Node).filter(Node.name == name,
-                                         Node.facebook_id == facebook_id).count() >= 1
+                                               Node.facebook_id == facebook_id).count() >= 1
 
     def findNode(self, name, facebook_id):
+        """if exists returns the element from database
+         with the name and facebook_id as given
+         otherwise returns None"""
+        if not self.isNode(name, facebook_id):
+            return None
         return self.session.query(Node).filter(Node.name == name,
-                                         Node.facebook_id == facebook_id).first()
+                                               Node.facebook_id == facebook_id).first()
 
     def clear(self):
         """
@@ -104,6 +117,7 @@ class NetworkGraph:
         return new_node
 
     def add_edge(self, source, target):
+        """Adds the edge with the left point source and the right point target"""
         source.add_friend(target)
         self.session.commit()
 
@@ -123,15 +137,15 @@ class NetworkGraph:
 
     def get_nodes(self):
         """
-        Returns the list of all nodes from database
-        :return: list of nodes, each of them is instance of class Node
+        Returns the query instance of all nodes from database
+        :return: query instance of nodes, each of them is instance of class Node
         """
         return self.session.query(Node)
 
     def get_edges(self):
         """
-        Returns the list of all edges from database
-        :return: list of tuples of ids. Each tuple represents an edge
+        Returns the query instance of all edges from database
+        :return: query instance. Each tuple represents an edge
         """
         return self.session.query(Edge)
 
@@ -197,7 +211,9 @@ class NetworkGraph:
                     res_id += link[index]
         return res_id
 
-    def write_gephi(self, wnodes="nodes.csv", wedges="edges.csv"):
+    def export_graph(self, wnodes="nodes.csv", wedges="edges.csv"):
+        """Writes the list of nodes into wnodes file and the list of edges
+        into edges file in type of csv"""
         with open(wnodes, "w", encoding="utf-8") as filew:
             filew.write("ID,Label,FB_ID\n")
             for node in self.get_nodes().all():
@@ -208,6 +224,9 @@ class NetworkGraph:
                 filew.write("%d,%d\n" % (source, target))
 
     def read_friends_from_file(self, user, file, adding_new=True):
+        """Reads the user friends from files of type: each name is follower by its
+        facebook id in the next line. adding_new arg controls if the new arguments
+        could be added or only existing could make new nodes"""
         with open(file, "r", encoding="utf-8") as data_file:
             content = data_file.readlines()
 
@@ -218,13 +237,9 @@ class NetworkGraph:
                 facebook_id = self.id_from_url(content[index * 2 + 1].strip())
 
                 new_node = self.findNode(name, facebook_id)
-                # print(name, facebook_id)
                 if new_node is None:
                     if adding_new:
                         new_node = self.add_node(name=name, facebook_id=facebook_id)
                         self.add_edge(user, new_node)
                 else:
                     self.add_edge(user, new_node)
-                    # print("Adding new EDGE")
-# a = NetworkGraph("./facebook_network_graph/interested.db")
-# a.write_gephi()
