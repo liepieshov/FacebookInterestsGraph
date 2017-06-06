@@ -214,15 +214,17 @@ class NetworkGraph:
             length_half = len(content) // 2
 
             for index in range(length_half):
-                name = content[index * 2]
-                facebook_id = self.id_from_url(content[index * 2 + 1])
+                name = content[index * 2].strip()
+                facebook_id = self.id_from_url(content[index * 2 + 1].strip())
 
                 new_node = self.findNode(name, facebook_id)
+                # print(name, facebook_id)
                 if new_node is None:
                     if adding_new:
                         new_node = self.add_node(name=name, facebook_id=facebook_id)
-                        user.add_friend(new_node)
+                        self.add_edge(user, new_node)
                 else:
-                    user.add_friend(new_node)
+                    self.add_edge(user, new_node)
+                    # print("Adding new EDGE")
 # a = NetworkGraph("./facebook_network_graph/interested.db")
 # a.write_gephi()

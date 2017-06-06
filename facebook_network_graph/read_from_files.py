@@ -30,10 +30,10 @@ def read_from_files2(file_data, path_to_files):
     graph = NetworkGraph(file_name="interested.db")
     graph.clear()
     for name, fb_id in data:
-        graph.add_node(name=name, facebook_id=graph.id_from_url(fb_id))
+        graph.add_node(name=name, facebook_id=graph.id_from_url(fb_id)).facebook_id
     for name, fb_id in data:
-        new_user = graph.findNode(name=name, facebook_id=fb_id)
+        new_user = graph.findNode(name=name, facebook_id=graph.id_from_url(fb_id))
         graph.read_friends_from_file(new_user, "%s%s.txt" % (path_to_files, name), adding_new=False)
 
-read_from_files2("/home/inkognita/PycharmProjects/CourseWork/data/interested.txt",
-                 "/home/inkognita/PycharmProjects/CourseWork/db_interested/")
+read_from_files2("/home/liepieshov/CourseWork/data/interested.txt",
+                 "/home/liepieshov/CourseWork/db_interested/")
