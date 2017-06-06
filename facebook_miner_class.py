@@ -28,26 +28,10 @@ class WebGetter:
     def friends_scrapper(self, pg_id):
         url = "%s/friends" % self.link_editor(pg_id)
         self.browser.get(url)
-        # SCROLL_PAUSE_TIME = 1.5
         time.sleep(1.5)
-        print(len(self.browser.find_elements_by_css_selector("img._359.img")), "Len of selectors list=)")
         while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1:
             # Scroll down to bottom
             self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        # Get scroll height
-        # last_height = self.browser.execute_script("return document.body.scrollHeight")
-        # while True:
-        #     # Scroll down to bottom
-        #     self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        #
-        #     # Wait to load page
-        #     time.sleep(SCROLL_PAUSE_TIME)
-        #
-        #     # Calculate new scroll height and compare with last scroll height
-        #     new_height = self.browser.execute_script("return document.body.scrollHeight")
-        #     if new_height == last_height:
-        #         break
-        #     last_height = new_height
         print("Scrolled to the bottom...")
         blocks = self.browser.find_elements_by_xpath("//div[@data-testid='friend_list_item']")
         ids_list = list()
