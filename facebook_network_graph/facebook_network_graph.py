@@ -74,6 +74,14 @@ class NetworkGraph:
         Base.metadata.create_all(self.engine)
         self.session = orm.sessionmaker(bind=self.engine)()
 
+    def isNode(self, name, facebook_id):
+        return self.session.query.filter(Node.name == name,
+                                         Node.facebook_id == facebook_id).count() >= 1
+
+    def findNode(self, name, facebook_id):
+        return self.session.query.filter(Node.name == name,
+                                         Node.facebook_id == facebook_id).first()
+
     def clear(self):
         """
         Drops all the tables of the database
@@ -198,7 +206,7 @@ class NetworkGraph:
             for source, target in self.get_edges().all():
                 filew.write("%d,%d\n" % (source, target))
 
-    def read_friends_from_file(self, user, file):
+    def read_friends_from_file(self, user, file, adding_new=True):
         with open(file, "r", encoding="utf-8") as data_file:
             content = data_file.readlines()
 
@@ -208,5 +216,10 @@ class NetworkGraph:
                 name = content[index * 2]
                 facebook_id = self.id_from_url(content[index * 2 + 1])
 
-                new_node = self.add_node(name=name, facebook_id=facebook_id)
-                user.add_friend(new_node)
+                new_node = self.findNode(name, facebook_id)
+                if new_node is None:
+                    if adding_new:
+                        new_node = self.add_node(name=name, facebook_id=facebook_id)
+                        user.add_friend(new_node)
+                else:
+                    user.add_friend(new_node)
