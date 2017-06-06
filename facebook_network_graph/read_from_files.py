@@ -17,11 +17,23 @@ def read_file(file_name):
 def read_from_files(file_data, path_to_files):
 
     data = read_file(file_data)
-    graph = NetworkGraph()
+    graph = NetworkGraph(file_name="database.db")
     graph.clear()
     for name, fb_id in data:
         new_user = graph.add_node(name=name, facebook_id=graph.id_from_url(fb_id))
         graph.read_friends_from_file(new_user, "%s%s.txt" % (path_to_files, name))
 
-read_from_files("/home/inkognita/PycharmProjects/CourseWork/data/ready_data.txt",
-                "/home/inkognita/PycharmProjects/CourseWork/db/")
+
+def read_from_files2(file_data, path_to_files):
+
+    data = read_file(file_data)
+    graph = NetworkGraph(file_name="databasev2.db")
+    graph.clear()
+    for name, fb_id in data:
+        new_user = graph.add_node(name=name, facebook_id=graph.id_from_url(fb_id))
+    for name, fb_id in data:
+        new_user = graph.findNode(name=name, facebook_id=fb_id)
+        graph.read_friends_from_file(new_user, "%s%s.txt" % (path_to_files, name), adding_new=False)
+
+read_from_files2("/home/inkognita/PycharmProjects/CourseWork/data/interested.txt",
+                "/home/inkognita/PycharmProjects/CourseWork/db_interested/")

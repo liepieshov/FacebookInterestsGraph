@@ -75,11 +75,11 @@ class NetworkGraph:
         self.session = orm.sessionmaker(bind=self.engine)()
 
     def isNode(self, name, facebook_id):
-        return self.session.query.filter(Node.name == name,
+        return self.session.query(Node).filter(Node.name == name,
                                          Node.facebook_id == facebook_id).count() >= 1
 
     def findNode(self, name, facebook_id):
-        return self.session.query.filter(Node.name == name,
+        return self.session.query(Node).filter(Node.name == name,
                                          Node.facebook_id == facebook_id).first()
 
     def clear(self):
