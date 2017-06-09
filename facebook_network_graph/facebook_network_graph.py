@@ -11,6 +11,29 @@ Edge = db.Table(
     db.Column('target', db.Integer, db.ForeignKey('nodes.id'), primary_key=True)
 )
 
+# likes_association table - is a help table for relationships between comms and users
+association_Likes = db.Table(
+    'likes_association',
+    Base.metadata,
+    db.Column('likes_id', db.Integer, db.ForeignKey('likes.id')),
+    db.Column('nodes_id', db.Integer, db.ForeignKey('nodes.id'))
+)
+
+
+class Like(Base):
+    """
+    Class representing the facebook page, community etc.
+    """
+    __tablename__ = 'likes'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    facebook_id = db.Column(db.String)
+    likers = orm.relationship(
+        "Node",
+        secondary=association_Likes,
+        backref="likes_id"
+    )
+
 
 class Node(Base):
     """
@@ -26,6 +49,12 @@ class Node(Base):
                                secondaryjoin=id == Edge.c.target,
                                backref='source'
                                )
+
+    likes = orm.relationship(
+        "Like",
+        secondary=association_Likes,
+        backref="nodes_id"
+    )
 
     def add_friend(self, node):
         """Adds the node as a friend of the current Node"""
