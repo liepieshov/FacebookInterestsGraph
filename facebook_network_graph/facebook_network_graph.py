@@ -311,7 +311,6 @@ class NetworkGraph:
         :param target: instance of Node class, where the path finishes
         :return: list of nodes of the path if the path exists otherwise None
         """
-
         def find_shortest_path(graph, start, end, path=list()):
             path = path + [start]
             if start == end:
@@ -329,6 +328,7 @@ class NetworkGraph:
 
     @staticmethod
     def id_from_url(link):
+        """Gets the id from the url"""
         res_id = ""
         link = link.strip()
         if "profile.php" in link:
@@ -338,13 +338,15 @@ class NetworkGraph:
                     res_id += link[index]
                 else:
                     return res_id
-        else:
+        elif "facebook" in link:
             id_index = link.find("facebook.com/") + 13
             for index in range(id_index, len(link)):
                 if link[index] in "/?&":
                     return res_id
                 else:
                     res_id += link[index]
+        else:
+            res_id = link
         return res_id
 
     def export_graph(self, wnodes="nodes.csv", wedges="edges.csv"):

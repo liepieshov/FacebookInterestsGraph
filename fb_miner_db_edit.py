@@ -8,6 +8,8 @@ class WebGetter:
     """
     Class that helps to scrap the data from facebook
     """
+    display = Display(visible=0, size=(800, 600))
+
     def __init__(self, db_file_name="wgdb.db", clear=True):
         """Creates the new FireFox session and connects to the database.
         Depending on clear arg could clear the database."""
@@ -37,21 +39,38 @@ class WebGetter:
         print("Current_url %s" % self.browser.current_url)
         print("Logged in...")
 
-    def friends_scrapper(self, name, pg_id):
-        """Scrappes the friends data from the page named by name and situated
-        by pg_id on facebook and writes it to database"""
-        pg_id = self.link_editor(pg_id)
+    def friends_scrapper(self, name, url):
+        """Scrapes the friends data from the page named by name and situated
+        by url on facebook and writes it to database"""
+        pg_id = self.link_editor(url)
         name = name.strip()
 
         user = self.db.add_node(name=name, facebook_id=pg_id)
         try:
-            for name, pg_id in self._friends_scrapper(pg_id):
-                new_user = self.db.add_node(name=name, facebook_id=pg_id)
+            for uname, uid in self._friends_scrapper(pg_id):
+                new_user = self.db.add_node(name=uname, facebook_id=uid)
                 self.db.add_edge(user, new_user)
         except Exception as e:
             self.add_error(e)
 
-    def likes_scrapper(self, url):
+    def likes_scrapper(self, name, url):
+        """Scrapes the likes data from the page named by name and situated
+        by url on facebook and writes it to database"""
+        pg_id = self.link_editor(url)
+        name = name.strip()
+
+        user = self.db.add_node(name=name, facebook_id=pg_id)
+        try:
+            for uname, uid in self._likes_scrapper(pg_id):
+                like_page = self.db.add_like_page(name=uname, facebook_id=uid)
+                self.db.add_like_edge(user, like_page)
+        except Exception as e:
+            self.add_error(e)
+
+    def _likes_scrapper(self, user_id):
+        """Helper method for likes_scrapper"""
+        url = "https://www.facebook.com/%s/likes" % self.link_editor(user_id)
+
         self.browser.get(url)
         time.sleep(1.5)
 
@@ -61,15 +80,17 @@ class WebGetter:
         print("Scrolled to the bottom...")
 
         blocks = self.browser.find_elements_by_css_selector(".fsl.fwb.fcb")
-        likes_lst = list()
+
         for block in blocks:
             try:
-                name = block.find_element_by_css_selector("a").text
-                # print("%s" % name)
-                likes_lst.append(name)
+                name = block.find_element_by_css_selector("a").text.strip()
+                link = block.find_element_by_css_selector("a").get_attribute("href").strip()
             except Exception as e:
+                name = None
+                link = None
                 print(e)
-        print(likes_lst, len(likes_lst))
+            if name:
+                yield name, self.link_editor(link)
 
     def _friends_scrapper(self, pg_id):
         """Helper function for friends scrapper funct"""
@@ -138,28 +159,16 @@ def read_file(file_name):
                 data.append((name, fb_id))
     return data
 
-
-def read_perform(input_file, wgInst):
-    """
-    Perform reading the information from the fb pages of users stored
-    in input_file using instance of class WebGetter as the second positional arg
-    """
-    i = 0
-    for name, fb_id in read_file(input_file):
-        print("Current profile index is %s" % str(i))
-        wgInst.friends_scrapper(fb_id)
-        i += 1
-
-
 if __name__ == "__main__":
-    #display = Display(visible=0, size=(800, 600))
-    #display.start()
+    # Starting invisible display
+    WebGetter.display.start()
+
+    # Starting a new browser
     inst = WebGetter()
-    time_ = time.time()
     inst.login_facebook()
-    try:
-        inst.likes_scrapper("https://www.facebook.com/andriy.dvorchyn/likes?lst=100007370378704%3A763106940%3A1496837102")
-    finally:
-        inst.close_browser()
-        #display.stop()
-    print(time.time() - time_)
+
+    # Closing the browser
+    inst.close_browser()
+
+    # Stopping the display
+    WebGetter.display.stop()
