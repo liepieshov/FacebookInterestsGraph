@@ -338,7 +338,7 @@ class NetworkGraph:
                     res_id += link[index]
                 else:
                     return res_id
-        elif "facebook" in link:
+        elif "facebook.com/" in link:
             id_index = link.find("facebook.com/") + 13
             for index in range(id_index, len(link)):
                 if link[index] in "/?&":

@@ -2,6 +2,7 @@ from selenium import webdriver
 import time
 from pyvirtualdisplay import Display
 from facebook_network_graph.facebook_network_graph import NetworkGraph
+import sys
 
 
 class WebGetter:
@@ -51,7 +52,8 @@ class WebGetter:
                 new_user = self.db.add_node(name=uname, facebook_id=uid)
                 self.db.add_edge(user, new_user)
         except Exception as e:
-            self.add_error(e)
+            print(str(e))
+            # self.add_error(e)
 
     def likes_scrapper(self, name, url):
         """Scrapes the likes data from the page named by name and situated
@@ -65,7 +67,9 @@ class WebGetter:
                 like_page = self.db.add_like_page(name=uname, facebook_id=uid)
                 self.db.add_like_edge(user, like_page)
         except Exception as e:
-            self.add_error(e)
+            print(str(e))
+            sys.stdout.flush()
+            # self.add_error(e)
 
     def _likes_scrapper(self, user_id):
         """Helper method for likes_scrapper"""
@@ -85,10 +89,12 @@ class WebGetter:
             try:
                 name = block.find_element_by_css_selector("a").text.strip()
                 link = block.find_element_by_css_selector("a").get_attribute("href").strip()
+                # print(name, link)
             except Exception as e:
-                name = None
-                link = None
                 print(e)
+                sys.stdout.flush()
+                name = None
+                continue
             if name:
                 yield name, self.link_editor(link)
 
@@ -164,9 +170,18 @@ if __name__ == "__main__":
     WebGetter.display.start()
 
     # Starting a new browser
-    inst = WebGetter()
+    inst = WebGetter(db_file_name="data/interested.db", clear=False)
     inst.login_facebook()
-
+    # inst.db.add_node(name="Kostya Liepieshov", facebook_id="Inkognita.n1")
+    user_parsed_index = 0
+    list_of_users = inst.db.get_nodes().all()
+    try:
+        for user in list_of_users:
+            print("Current profile id %d, name = %s, id = %s" % (user_parsed_index, user.name, user.facebook_id))
+            sys.stdout.flush()
+            inst.likes_scrapper(user.name, user.facebook_id)
+    except Exception as e:
+        print(str(e))
     # Closing the browser
     inst.close_browser()
 
