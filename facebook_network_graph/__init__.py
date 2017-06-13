@@ -1,1 +1,1 @@
-from facebook_network_graph import *
+from .facebook_network_graph import *

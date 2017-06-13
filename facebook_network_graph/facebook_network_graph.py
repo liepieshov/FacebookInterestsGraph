@@ -250,6 +250,8 @@ class NetworkGraph:
         """
         Deletes the source Node from database
         :param source: instance of Node class
+        :param name: name of the Node
+        :param facebook_id: fb id of the Node
         """
         if source:
             source_identifier = self.get_nodes().filter(
@@ -358,7 +360,7 @@ class NetworkGraph:
                 filew.write("%d,%d\n" % (source, target))
 
     def read_friends_from_file(self, user, file, adding_new=True):
-        """Reads the user friends from files of type: each name is follower by its
+        """Reads the user friends from files of type: each name is followed by its
         facebook id in the next line. adding_new arg controls if the new arguments
         could be added or only existing could make new nodes"""
         with open(file, "r", encoding="utf-8") as data_file:
@@ -378,14 +380,16 @@ class NetworkGraph:
                 else:
                     self.add_edge(user, new_node)
 
-# a = NetworkGraph(file_name="adddsad.db")
-# a.clear()
-# c = a.add_node(name="A")
-# d = a.add_like_page(name="Like")
-# a.add_like_edge(c, d)
-# a.delete_like_edge(c, d)
-# d.likers.remove(c)
-# a.session.commit()
-# a.delete_like_page(d)
-# print(a.session.query(Like).first().likers)
-# a.add_edge(c, d)
+    def users_from_file(self, file):
+        """Reads the users from file of type: each name is followed by its
+        facebook id in the next line"""
+        with open(file, "r", encoding="utf-8") as data_file:
+            content = data_file.readlines()
+
+            length_half = len(content) // 2
+
+            for index in range(length_half):
+                name = content[index * 2].strip()
+                facebook_id = self.id_from_url(content[index * 2 + 1].strip())
+                if name and facebook_id:
+                    self.add_node(name=name, facebook_id=facebook_id)

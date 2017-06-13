@@ -51,6 +51,26 @@ class WebGetter:
         except Exception as e:
             self.add_error(e)
 
+    def likes_scrapper(self, url):
+        self.browser.get(url)
+        time.sleep(1.5)
+
+        while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1:
+            # Scroll down to bottom
+            self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        print("Scrolled to the bottom...")
+
+        blocks = self.browser.find_elements_by_css_selector(".fsl.fwb.fcb")
+        likes_lst = list()
+        for block in blocks:
+            try:
+                name = block.find_element_by_css_selector("a").text
+                # print("%s" % name)
+                likes_lst.append(name)
+            except Exception as e:
+                print(e)
+        print(likes_lst, len(likes_lst))
+
     def _friends_scrapper(self, pg_id):
         """Helper function for friends scrapper funct"""
         url = "https://www.facebook.com/%s/friends" % self.link_editor(pg_id)
@@ -132,14 +152,14 @@ def read_perform(input_file, wgInst):
 
 
 if __name__ == "__main__":
-    display = Display(visible=0, size=(800, 600))
-    display.start()
+    #display = Display(visible=0, size=(800, 600))
+    #display.start()
     inst = WebGetter()
     time_ = time.time()
     inst.login_facebook()
     try:
-        read_perform("./data/interested.txt", inst)
+        inst.likes_scrapper("https://www.facebook.com/andriy.dvorchyn/likes?lst=100007370378704%3A763106940%3A1496837102")
     finally:
         inst.close_browser()
-        display.stop()
+        #display.stop()
     print(time.time() - time_)
