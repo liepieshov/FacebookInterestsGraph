@@ -34,6 +34,11 @@ class Like(Base):
         backref="likes_id"
     )
 
+    def delete_all_likers(self):
+        """Deletes the connection between like_page and the users"""
+        while self.likers:
+            self.likers.pop()
+
 
 class Node(Base):
     """
@@ -55,6 +60,21 @@ class Node(Base):
         secondary=association_Likes,
         backref="nodes_id"
     )
+
+    def like_page(self, page):
+        """Adds page to the user's list of likes"""
+        if page not in self.likes:
+            self.likes.append(page)
+
+    def unlike_page(self, page):
+        """Removes page from the user's list of likes"""
+        if page in self.likes:
+            self.likes.remove(page)
+
+    def unlike_all_pages(self):
+        """Removes all pages from the user's list of likes"""
+        for like_page in self.likes:
+            self.unlike_page(like_page)
 
     def add_friend(self, node):
         """Adds the node as a friend of the current Node"""
@@ -100,8 +120,7 @@ class NetworkGraph:
     """
     Class representing the facebook network graph
     """
-
-    def __init__(self, file_name="__larger_base.db"):
+    def __init__(self, file_name="default_file.db"):
         """
         Connects to the database in a new session
         :param file_name: the name of the database file
@@ -115,6 +134,44 @@ class NetworkGraph:
         return self.session.query(Node).filter(Node.name == name,
                                                Node.facebook_id == facebook_id).count() >= 1
 
+    def add_like_edge(self, node_user, like_page):
+        """Adds like_page to node_user's list of likes"""
+        if not isinstance(node_user, Node):
+            raise(ValueError("node_user must be instance of Node"))
+        if not isinstance(like_page, Like):
+            raise(ValueError("like_page must me instance of Like"))
+        page_identifier = self.session.query(Like).filter(Like.name == like_page.name,
+                                                          Like.facebook_id == like_page.facebook_id)
+        if page_identifier and page_identifier.count() < 1:
+            raise(ValueError("like_page is not in database"))
+
+        node_user.like_page(like_page)
+        self.session.commit()
+
+    def get_like_pages(self):
+        """
+        Returns the query instance of all like pages from database
+        :return: query instance of Like.
+        """
+        return self.session.query(Like)
+
+    def get_like_edges(self):
+        """
+        Returns the query instance of all like edges from database
+        :return: query instance. Each tuple represents a like edge
+        """
+        return self.session.query(association_Likes)
+
+    def delete_like_edge(self, node_user, like_page):
+        """Removes like_page from node_user's list of likes"""
+        if not isinstance(node_user, Node):
+            raise(ValueError("node_user must be instance of Node"))
+        if not isinstance(like_page, Like):
+            raise(ValueError("like_page must me instance of Like"))
+        node_user.unlike_page(like_page)
+        # self.session.delete(like_page)
+        self.session.commit()
+
     def findNode(self, name, facebook_id):
         """if exists returns the element from database
          with the name and facebook_id as given
@@ -123,6 +180,40 @@ class NetworkGraph:
             return None
         return self.session.query(Node).filter(Node.name == name,
                                                Node.facebook_id == facebook_id).first()
+
+    def add_like_page(self, name=None, facebook_id=None):
+        """Adds a new like page into database"""
+        page_identifier = self.session.query(Like).filter(Like.name == name,
+                                                          Like.facebook_id == facebook_id)
+        if page_identifier and page_identifier.count() > 0:
+            return
+        new_like_page = Like(name=name, facebook_id=facebook_id)
+        self.session.add(new_like_page)
+        self.session.commit()
+        return new_like_page
+
+    def delete_edge(self, source, target):
+        """Deletes edge connection from database"""
+        if not (isinstance(source, Node) and isinstance(target, Node)):
+            raise TypeError("source and target must be Node")
+        if not (self.isNode(source.name, source.facebook_id)
+                and self.isNode(target.name, target.facebook_id)):
+            raise ValueError("source and target must be in DB")
+        source.remove_friend(target)
+        self.session.commit()
+
+    def delete_like_page(self, page):
+        """Deletes like page"""
+        if not isinstance(page, Like):
+            raise ValueError("page must be an istance of Like")
+        page_identifier = self.session.query(Like).filter(Like.name == page.name,
+                                                          Like.facebook_id == page.facebook_id)
+        if page_identifier and page_identifier.count() < 1:
+            raise (ValueError("page is not in Database"))
+        page = page_identifier.first()
+        page.delete_all_likers()
+        page_identifier.delete()
+        self.session.commit()
 
     def clear(self):
         """
@@ -138,7 +229,7 @@ class NetworkGraph:
         :param facebook_id: (str) id of the user's facebook page
         """
         node_identifier = self.get_nodes().filter(Node.name == name, Node.facebook_id == facebook_id)
-        if node_identifier.count() > 0:
+        if node_identifier and node_identifier.count() > 0:
             return node_identifier.first()
         new_node = Node(name=name, facebook_id=facebook_id)
         self.session.add(new_node)
@@ -147,20 +238,34 @@ class NetworkGraph:
 
     def add_edge(self, source, target):
         """Adds the edge with the left point source and the right point target"""
+        if not (isinstance(source, Node) and isinstance(target, Node)):
+            raise TypeError("source and target must be Node")
+        if not (self.isNode(source.name, source.facebook_id)
+                and self.isNode(target.name, target.facebook_id)):
+            raise ValueError("source and target must be in DB")
         source.add_friend(target)
         self.session.commit()
 
-    def delete_node(self, source):
+    def delete_node(self, source=None, name=None, facebook_id=None):
         """
         Deletes the source Node from database
         :param source: instance of Node class
         """
-        source_identifier = self.get_nodes().filter(
-            Node.name == source.name,
-            Node.facebook_id == source.facebook_id
-        )
-        if source_identifier.count() > 0:
+        if source:
+            source_identifier = self.get_nodes().filter(
+                Node.name == source.name,
+                Node.facebook_id == source.facebook_id
+            )
+        elif name and facebook_id:
+            source_identifier = self.get_nodes().filter(
+                Node.name == name,
+                Node.facebook_id == facebook_id
+            )
+        else:
+            source_identifier = None
+        if source_identifier and source_identifier.count() > 0:
             source_identifier.first().remove_all_friends()
+            source_identifier.first().unlike_all_pages()
             source_identifier.delete()
             self.session.commit()
 
@@ -272,3 +377,15 @@ class NetworkGraph:
                         self.add_edge(user, new_node)
                 else:
                     self.add_edge(user, new_node)
+
+# a = NetworkGraph(file_name="adddsad.db")
+# a.clear()
+# c = a.add_node(name="A")
+# d = a.add_like_page(name="Like")
+# a.add_like_edge(c, d)
+# a.delete_like_edge(c, d)
+# d.likers.remove(c)
+# a.session.commit()
+# a.delete_like_page(d)
+# print(a.session.query(Like).first().likers)
+# a.add_edge(c, d)
