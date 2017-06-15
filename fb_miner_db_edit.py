@@ -31,11 +31,11 @@ class WebGetter:
 
         login_css = self.browser.find_element_by_id('email')
         password_css = self.browser.find_element_by_id('pass')
-        button = self.browser.find_element_by_id('u_0_q')
+        button = self.browser.find_element_by_id('login_form')
 
         login_css.send_keys(login)
         password_css.send_keys(password)
-        button.click()
+        button.submit()
         time.sleep(3)
         print("Current_url %s" % self.browser.current_url)
         print("Logged in...")
@@ -52,7 +52,7 @@ class WebGetter:
                 new_user = self.db.add_node(name=uname, facebook_id=uid)
                 self.db.add_edge(user, new_user)
         except Exception as e:
-            print(str(e))
+            print(e)
             # self.add_error(e)
 
     def likes_scrapper(self, name, url):
@@ -67,7 +67,7 @@ class WebGetter:
                 like_page = self.db.add_like_page(name=uname, facebook_id=uid)
                 self.db.add_like_edge(user, like_page)
         except Exception as e:
-            print(str(e))
+            print(e)
             sys.stdout.flush()
             # self.add_error(e)
 
@@ -77,14 +77,18 @@ class WebGetter:
 
         self.browser.get(url)
         time.sleep(1.5)
-
-        while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1:
+        print(self.browser.current_url)
+        limit = 1500
+        curr_count = 0
+        while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1 and curr_count <= limit:
             # Scroll down to bottom
             self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            curr_count += 1
         print("Scrolled to the bottom...")
 
         blocks = self.browser.find_elements_by_css_selector(".fsl.fwb.fcb")
-
+        print(len(blocks))
+        sys.stdout.flush()
         for block in blocks:
             try:
                 name = block.find_element_by_css_selector("a").text.strip()
@@ -104,10 +108,12 @@ class WebGetter:
 
         self.browser.get(url)
         time.sleep(1.5)
-
-        while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1:
+        limit = 1500
+        current_counter = 0
+        while len(self.browser.find_elements_by_css_selector("img._359.img")) == 1 and current_counter <= limit:
             # Scroll down to bottom
             self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            current_counter += 1
         print("Scrolled to the bottom...")
 
         blocks = self.browser.find_elements_by_xpath("//div[@data-testid='friend_list_item']")
@@ -167,21 +173,29 @@ def read_file(file_name):
 
 if __name__ == "__main__":
     # Starting invisible display
+    time.sleep(15)
     WebGetter.display.start()
 
     # Starting a new browser
-    inst = WebGetter(db_file_name="data/interested.db", clear=False)
+    inst = WebGetter(db_file_name="data/will_go_lst.db", clear=False)
+    # st = int(input("Write"))
+    # en = int(input("Write"))
+    # try:
     inst.login_facebook()
     # inst.db.add_node(name="Kostya Liepieshov", facebook_id="Inkognita.n1")
     user_parsed_index = 0
     list_of_users = inst.db.get_nodes().all()
-    try:
-        for user in list_of_users:
+    start_p = int(input("W: "))
+    finish_p = int(input("W: "))
+    for user in list_of_users:
+        if user_parsed_index >= start_p and user_parsed_index <= finish_p and user.facebook_id != "jarko.korol":
             print("Current profile id %d, name = %s, id = %s" % (user_parsed_index, user.name, user.facebook_id))
             sys.stdout.flush()
             inst.likes_scrapper(user.name, user.facebook_id)
-    except Exception as e:
-        print(str(e))
+        user_parsed_index += 1
+    # except Exception as e:
+    #    print("Got" + str(e))
+    #    sys.stdout.flush()
     # Closing the browser
     inst.close_browser()
 
