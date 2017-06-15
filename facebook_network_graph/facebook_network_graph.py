@@ -186,7 +186,7 @@ class NetworkGraph:
         page_identifier = self.session.query(Like).filter(Like.name == name,
                                                           Like.facebook_id == facebook_id)
         if page_identifier and page_identifier.count() > 0:
-            return
+            return page_identifier.first()
         new_like_page = Like(name=name, facebook_id=facebook_id)
         self.session.add(new_like_page)
         self.session.commit()
