@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en" xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/Map">
+
+<head>
+
+    <title>OII Network Visualisation Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+
+
+    <link rel="stylesheet" type="text/css" href="../js/fancybox/jquery.fancybox.css"/>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" media="screen and (max-height: 770px)" href="../css/tablet.css"/>
+</head>
+<body style="background-color: #6e0080; height: 100%;overflow: hidden; vertical-align: middle; text-align: center">
+
+<div style="background-color: white; margin: 20% auto 40%; width: 240px;">
+  <div>
+      <img style="display: block; margin: -30px auto; height: auto; width: 90%" src="http://lviv.gdg.org.ua/wp-content/uploads/2015/05/cs_logo-01-1024x468.png"/>
+      <div style="height: 25px;"></div>
+    <a style="display: block; margin: 0 auto; width: 70%; text-decoration: none" href="./first_chart">
+        <div class="custombutton">First graph</div>
+
+    </a>
+<div style="height: 25px;"></div>
+      <a style="display: block; margin: 0 auto; width: 70%; text-decoration: none" href="./second_chart">
+        <div class="custombutton">Second graph</div>
+    </a>
+      <div style="height: 25px;"></div>
+      <a style="display: block; margin: 0 auto; width: 70%; text-decoration: none" href="./third_chart">
+        <div class="custombutton">Third graph</div>
+    </a>
+      <div style="height: 25px;"></div>
+      <img style="float: left; margin-left: 15px" class="chipimg" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p160x160/14212637_1772855516303444_5568551853273427244_n.jpg?oh=b647689f2db08fd900caa5b1d236c06d&oe=59E9FDF4" alt="Person" width="96" height="96" title="Kostiantyn Liepieshov(author)">
+      <a href="https://facebook.com/inkognita.n1"><img class="chipimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAMAAAAPdrEwAAAAYFBMVEU7WZj///8+XJpBXpvu8fdTa6MoS5E3V5cvUJOQnsBYcKUiSI/8/P3O1OKBkbkzU5WnssyptcpLZaBieKp6jLWcqcgWQo2JmL1tga709vl9j7R0hrDV2uTe4uzEzN6yu9JTqAUKAAABl0lEQVRYhe3ZbW+DIBAH8KMqh2J71ue22n7/bzm7LW1hkkCFbS/4vzPiL4SE4wzA2HyuE985T4wBu0lC8BwkeWQwS+/wJy4nOFMIGYAukASZ9DLtBHZhZFjgSEc6JI1I9yAh6vtjC42i7+vxsKQdmyJZnhT9fZp4U81MScl90Chbzb3HBy2y6SfshebNGuyDFod1eTtNhjl7oDENRfPKJG+myShvpUUXikaxslU80YVZ3khTrntTNRy+Mih9hzPNbyp8GjkX9B1lpDMt1eJRFsI00p1W98tVGkdupQdzW+e+1io9hqMzc8cY6Uj/c5rEI71K1+Ilb5QnavNHhpNCd/lLRveeT+6ZVTr3em1Lt+HoJtiClHUwOqVg9Kwc6F7pazj6pp7APuk8HD2+sdEtaa1UeaRL7SuPdKp1O1Y0ZsUjtdaHPN8UWum2q9f4jNY9ZfR8pX3056dMpCMd6UhHOtKRjnSkf4F2vMp0oR0vYK1pvMDkdm1sTcs9sKPTZbcdvfThFQPGpjbZWUek5UtYBqujksvyj/IB8KYcU7dlrgoAAAAASUVORK5CYII=" alt="Person" width="96" height="96" title="Me on facebook"></a>
+      <a style="float: right; margin-right: 15px" href="https://github.com/Inkognita/FacebookGraphInterests"><img class="chipimg" src="data:image/png;base64,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" alt="Person" width="96" height="96" style=" margin-left: 0px" title="Github repository of the project"></a>
+      <div style="height: 75px;"></div>
+</div>
+</div>
+
+
+<!--<div id="button"><a href="./first_chart">First</a></div>-->
+
+</body>
+</html>

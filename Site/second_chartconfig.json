@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "second_chart.json",
+  "logo": {
+    "file": "http://lviv.gdg.org.ua/wp-content/uploads/2015/05/cs_logo-01-1024x468.png",
+    "link": "",
+    "text": "CS@UCU logo"
+  },
+  "text": {
+    "more": "",
+    "intro": "",
+    "title": "Facebook friends connections visualisation"
+  },
+  "legend": {
+    "edgeLabel": "Friend connection",
+    "colorLabel": "The amount of connections",
+    "nodeLabel": "Facebook user"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": false,
+    "hoverBehavior": "default"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#002147",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#fff",
+      "labelThreshold": 100,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 10
+    },
+    "mouseProperties": {
+      "maxRatio": 100,
+      "minRatio": 0.75
+    }
+  }
+}

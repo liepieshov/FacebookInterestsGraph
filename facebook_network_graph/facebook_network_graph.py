@@ -353,13 +353,18 @@ class NetworkGraph:
         """Writes the list of nodes into wnodes file and the list of edges
         into edges file in type of csv"""
         with open(wnodes, "w", encoding="utf-8") as filew:
-            filew.write("ID,Label,FB_ID\n")
+            filew.write("ID,Label,FacebookId,Mode,Amount\n")
             for node in self.get_nodes().all():
-                filew.write("%d,%s,%s\n" % (node.id, node.name, node.facebook_id))
+
+                filew.write("%d,%s,%s,%d,%d\n" % (node.id, node.name, node.facebook_id, 0, 1))
+            for like_page in self.get_like_pages().all():
+                filew.write("%s,%s,%s,%d,%d\n" % ("L" + str(like_page.id), like_page.name.replace(",", " "), like_page.facebook_id, 1, len(like_page.likers)))
         with open(wedges, "w", encoding="utf-8") as filew:
-            filew.write("Source,Target\n")
-            for source, target in self.get_edges().all():
-                filew.write("%d,%d\n" % (source, target))
+            filew.write("Source,Target,Type\n")
+            #for source, target in self.get_edges().all():
+            #    filew.write("%d,%d,undirected\n" % (source, target))
+            for source, target in self.get_like_edges().all():
+                filew.write("L%d,%d,undirected\n" % (source, target))
 
     def read_friends_from_file(self, user, file, adding_new=True):
         """Reads the user friends from files of type: each name is followed by its
@@ -395,3 +400,6 @@ class NetworkGraph:
                 facebook_id = self.id_from_url(content[index * 2 + 1].strip())
                 if name and facebook_id:
                     self.add_node(name=name, facebook_id=facebook_id)
+a= NetworkGraph(file_name="data/nm.db")
+a.export_graph()
+# print(a.get_like_pages().all())
